@@ -12,6 +12,7 @@ Group:		Development/Perl
 URL:		http://search.cpan.org/dist/%{module}
 Source:		http://www.cpan.org/modules/by-module/MIME/%{module}-%{version}.tar.bz2
 BuildRequires:	perl-devel
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 MIME::Explode is perl module for parsing and decoding single or multipart
