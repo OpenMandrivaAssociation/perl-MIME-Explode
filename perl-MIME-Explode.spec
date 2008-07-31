@@ -1,7 +1,7 @@
 %define module	MIME-Explode
 %define	name	perl-%{module}
 %define	version 0.38
-%define	release %mkrel 4
+%define	release %mkrel 5
 
 Name:		%{name}
 Version:	%{version}
