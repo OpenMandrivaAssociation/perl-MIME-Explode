@@ -1,18 +1,18 @@
-%define module	MIME-Explode
-%define	name	perl-%{module}
-%define	version 0.38
-%define	release %mkrel 5
+%define upstream_name	 MIME-Explode
+%define	upstream_version 0.38
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:	Perl extension for explode MIME messages
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{module}
-Source:		http://www.cpan.org/modules/by-module/MIME/%{module}-%{version}.tar.bz2
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/MIME/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildRequires:	perl-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 MIME::Explode is perl module for parsing and decoding single or multipart
@@ -21,7 +21,7 @@ ie, this module is designed to allows users to extract the attached files
 out of a MIME encoded email messages or mailboxes.
 
 %prep
-%setup -q -n %{module}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -43,4 +43,3 @@ rm -rf %{buildroot}
 %{perl_vendorarch}/MIME
 %{perl_vendorarch}/auto/MIME
 %{_mandir}/man3/*
-
