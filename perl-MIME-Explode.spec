@@ -1,9 +1,9 @@
 %define upstream_name	 MIME-Explode
-%define	upstream_version 0.38
+%define	upstream_version 0.39
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 1
 
 Summary:	Perl extension for explode MIME messages
 License:	GPL+ or Artistic
