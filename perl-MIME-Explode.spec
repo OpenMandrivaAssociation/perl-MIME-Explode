@@ -1,15 +1,13 @@
 %define upstream_name	 MIME-Explode
-%define	upstream_version 0.39
-
 Name:       perl-%{upstream_name}
-Version:    %{upstream_version}
-Release:	5
+Version:    0.39
+Release:	6
 
 Summary:	Perl extension for explode MIME messages
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/MIME-Explode
-Source0:	https://cpan.metacpan.org/authors/id/H/HD/HDIAS/MIME-Explode-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/H/HD/HDIAS/MIME-Explode-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -22,7 +20,7 @@ ie, this module is designed to allows users to extract the attached files
 out of a MIME encoded email messages or mailboxes.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -61,9 +59,7 @@ rm -rf %{buildroot}
 
 * Wed Jul 29 2009 Jérôme Quelin <jquelin@mandriva.org> 0.380.0-1mdv2010.0
 + Revision: 403861
-- rebuild using %%perl_convert_version
-
-* Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 0.38-5mdv2009.0
+- rebuild using %0.39 Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 0.38-5mdv2009.0
 + Revision: 257834
 - rebuild
 
